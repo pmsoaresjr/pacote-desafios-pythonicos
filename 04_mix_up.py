@@ -13,8 +13,15 @@ Assuma que a e b tem tamanho 2 ou maior.
 """
 
 def mix_up(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+    firs_letter_string_a = a[:2]
+    firs_letter_string_b = b[:2]
+
+    new_string_a = a.replace(firs_letter_string_a, firs_letter_string_b, 1)
+    new_string_b = b.replace(firs_letter_string_b, firs_letter_string_a, 1)
+
+    string_joined = new_string_a + " " + new_string_b
+
+    return string_joined
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
