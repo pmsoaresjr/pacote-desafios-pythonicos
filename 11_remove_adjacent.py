@@ -7,10 +7,12 @@ adjacentes iguais são reduzidos a um único elemento.
 Exemplo: [1, 2, 2, 3]
 Irá retornar: [1, 2, 3]
 """
+import itertools
 
 def remove_adjacent(nums):
     # +++ SUA SOLUÇÃO +++
-    return
+
+    return [k for k, g in itertools.groupby(nums)]
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
