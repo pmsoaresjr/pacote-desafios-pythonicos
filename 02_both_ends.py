@@ -7,9 +7,21 @@ Exemplo: 'spring' retorna 'spng'. Entretanto, se o tamanho da string
 for menor que 2, retorne uma string vazia.
 """
 
+
 def both_ends(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    # +++ SUA SOLUÇÃO 1 +++
+    if len(s) < 2:
+        string = ''
+    else:
+        string = s[0]+s[1]+s[-2]+s[-1]
+
+    # +++ SUA SOLUÇÃO 2 +++
+    if len(s) < 2:
+        string = ''
+    else:
+        string = s[:2] + s[-2:]
+
+    return string
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
