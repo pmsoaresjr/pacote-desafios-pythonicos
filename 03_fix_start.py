@@ -13,9 +13,25 @@ Dica: s.replace(stra, strb) retorna uma versão da string s
 onde todas as instancias de stra foram substituidas por strb.
 """
 
-def fix_start(s):
+
+def first_fix_start(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    string = ''
+    for count, char in enumerate(s):
+        if count == 0:
+            first_letter = char
+        if count > 0 and char == first_letter:
+            string += '*'
+        else:
+            string += char
+    return string
+
+
+def second_fix_start(s):
+    # +++ SUA SOLUÇÃO +++
+    s = s[0] + s[1:].replace(s[0], "*")
+
+    return s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -39,7 +55,11 @@ def test(f, in_, expected):
 
 if __name__ == '__main__':
     # Testes que verificam o resultado do seu código em alguns cenários.
-    test(fix_start, 'babble', 'ba**le')
-    test(fix_start, 'aardvark', 'a*rdv*rk')
-    test(fix_start, 'google', 'goo*le')
-    test(fix_start, 'donut', 'donut')
+    test(first_fix_start, 'babble', 'ba**le')
+    test(first_fix_start, 'aardvark', 'a*rdv*rk')
+    test(first_fix_start, 'google', 'goo*le')
+    test(first_fix_start, 'donut', 'donut')
+    test(second_fix_start, 'babble', 'ba**le')
+    test(second_fix_start, 'aardvark', 'a*rdv*rk')
+    test(second_fix_start, 'google', 'goo*le')
+    test(second_fix_start, 'donut', 'donut')
