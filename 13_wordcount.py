@@ -57,38 +57,6 @@ import sys
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
 
-def print_words(file):
-    dicLetras = count_words(file)
-    print_result(dicLetras, len(dicLetras), False)
-
-
-def print_top(file):
-    countador_letras = count_words(file)
-    print_result(countador_letras, 20, True)
-
-
-def count_words(filename):
-    with open(filename) as letras:
-        countador_letras = {}
-
-        for letra in letras.read().lower().split():
-            count = 1
-            if countador_letras.get(letra) is not None:
-                count = countador_letras.get(letra) + 1
-                countador_letras[letra] = count
-            else:
-                countador_letras[letra] = count
-
-        return countador_letras
-
-
-def print_result(countador_letra, topLimit, reverseOrder):
-    listLetras = list(countador_letra.items())
-    if reverseOrder:
-        listLetras.sort(key=lambda word: word[1], reverse=True)
-    for key, value in listLetras[:topLimit]:
-        print(key, value)
-
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
 # parêtros do programa.
